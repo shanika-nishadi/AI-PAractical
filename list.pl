@@ -35,3 +35,34 @@ last_elt( [Element] , Element).
 
 last_elt([_|Tail] , Element) :-
     last_elt(Tail , Element).
+
+% if else 
+
+( 5 > 3 ->   write('yes') ; write('No') )
+
+( X > 0 ->   write('Positive') ; X < 0 ->  write('Negative') ; write('Zero'))
+
+% find Max
+max_list([X] , X).
+
+max_list([H | T] , Max):-
+    max_list(T, MaxTail),
+    (  H >=  MaxTail ->  Max = H ; Max = MaxTail ). 
+    
+
+    % remove last
+	remove_first([ H | T] , T) .
+    
+
+remove_last([], []).
+remove_last ([Head | Tail] ,[Head | Result] ) :-
+    remove_last(Tail , Result).
+
+
+			remove_first([], _, []).
+remove_first ([Head | Tail] ,X ,[Head | Result] ) :-
+    remove_first(Tail ,X , Result).
+         
+    
+
+
