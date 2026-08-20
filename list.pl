@@ -19,3 +19,19 @@ length_list([], 0).
 length_list([_ | T ], Length) :-
     length_list(T , TailLength),
     Length is TailLength + 1.
+
+
+% Find index
+
+index_of(Element, [Element|_], 1).
+
+index_of(Element, [_|Tail], Index) :-
+    index_of(Element, Tail, Index1),
+    Index is Index1 + 1.
+
+ % find last elt
+
+last_elt( [Element] , Element).
+
+last_elt([_|Tail] , Element) :-
+    last_elt(Tail , Element).
