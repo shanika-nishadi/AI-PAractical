@@ -1,0 +1,12 @@
+data = load('iris.txt');
+>> [traindata , testdata] = splitData(data);
+>> rate = knn(traindata , testdata,5);
+
+....................................................
+
+
+data = load('iris.txt');
+>> data - shuffleData(data);
+>> rate = nFoldCV(data,10);
+
+.................................
